@@ -62,3 +62,31 @@ REFERENCIADO
 	"method": "POST"
 }
 ```
+
+_POPULADO_
+Simplemente lo une con el campo
+
+[POST_message](http://localhost:3000/message/)
+
+```json
+// INPUT
+{
+	"user": "63a359aafab3506837f328cb",
+	"message":"Entidad relacionada"
+}
+
+//OUTPUT
+{
+	"error": false,
+	"mensaje": {
+		"user": "63a359aafab3506837f328cb",
+		"message": "Entidad relacionada",
+		"date": "2022-12-21T19:08:48.152Z"
+	},
+	"body": {
+		"user": "63a359aafab3506837f328cb",
+		"message": "Entidad relacionada"
+	},
+	"method": "POST"
+}
+```

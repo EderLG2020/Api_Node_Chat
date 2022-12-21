@@ -6,11 +6,29 @@ function addS(message) {
 }
 
 async function listS(filterUser) {
-  let filter = {};
-  if (filterUser !== null) {
-    filter = { user: filterUser };
-  }
-  return await modelMessage.find(filter);
+  return new Promise(async (resolve, reject) => {
+    let filter = {};
+    if (filterUser !== null) {
+      filter = { user: filterUser };
+    }
+
+    const message = await modelMessage
+      .find(filter)
+      .populate("user")
+
+      /*^ si no funciona */
+      // .exec((error,populated)=>{
+      //   if (error) {
+      //     return reject(error)
+      //   }
+      //   resolve(populated)
+      // })
+
+      .catch((e) => {
+        reject(e);
+      });
+    resolve(message);
+  });
 
   // .populate("user")
   // .exec((error, populated) => {
