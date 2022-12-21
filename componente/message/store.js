@@ -5,12 +5,12 @@ function addS(message) {
   myMessage.save();
 }
 
-async function listS() {
-  //   let filter = {};
-  //   if (filterChat !== null) {
-  //     filter = { chat: filterChat };
-  //   }
-  return await modelMessage.find();
+async function listS(filterUser) {
+  let filter = {};
+  if (filterUser !== null) {
+    filter = { user: filterUser };
+  }
+  return await modelMessage.find(filter);
 
   // .populate("user")
   // .exec((error, populated) => {
@@ -33,7 +33,7 @@ async function editS(id, message) {
 }
 
 function deleteS(id) {
-  return Model.deleteOne({
+  return modelMessage.deleteOne({
     _id: id,
   });
 }

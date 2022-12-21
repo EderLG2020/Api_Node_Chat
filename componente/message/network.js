@@ -5,17 +5,17 @@ const controller = require("./controller");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  // const filterMessages = req.query.chat || null;
+  const filterMessages = req.query.user || null;
   // console.log(req.query); en url ?order=id&age=15
   // req.headers
   // res.header({})
   controller
-    .listC()
+    .listC(filterMessages)
     .then((data) => {
       response.success(req, res, data, 200);
     })
-    .catch(() => {
-      response.error(req, res, "[Error]", 500);
+    .catch((e) => {
+      response.error(req, res, "[Error]", 500, e);
     });
 });
 
@@ -45,6 +45,7 @@ router.patch("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
+  console.log(req.params.id);
   controller
     .deleteC(req.params.id)
     .then(() => {

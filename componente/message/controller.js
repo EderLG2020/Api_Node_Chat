@@ -20,18 +20,10 @@ function addMessage(user, message) {
 function deleteMessage(id) {
   return new Promise((resolve, reject) => {
     if (!id) {
-      reject("Id invalido");
-      return false;
+      return reject("Id invalido");
     }
 
-    store
-      .deleteS(id)
-      .then(() => {
-        resolve();
-      })
-      .catch((e) => {
-        reject(e);
-      });
+    resolve(store.deleteS(id));
   });
 }
 
@@ -49,9 +41,9 @@ function editMessage(id, message) {
   });
 }
 
-function listMessage() {
+function listMessage(filter) {
   return new Promise((resolve, reject) => {
-    resolve(store.listS());
+    resolve(store.listS(filter));
   });
 }
 
