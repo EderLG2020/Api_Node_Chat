@@ -13,3 +13,52 @@ const host = "cluster0.3jbmruv.mongodb.net";
 const database = "messege";
 const uri = `mongodb+srv://${user}:${pass}@${host}/${database}?retryWrites=true&w=majority`;
 ```
+
+REFERENCIADO
+
+[GET_message](http://localhost:3000/message/)
+
+```json
+// INPUT: Sin parámetros
+
+// OUTPUT:
+{
+  "error": false,
+  "mensaje": [
+    {
+      "_id": "63a359c0fab3506837f328d4",
+      "user": "63a359aafab3506837f328cb",
+      "message": "Entidad relacionada",
+      "date": "2022-12-21T19:08:48.152Z",
+      "__v": 0
+    }
+  ],
+  "body": {},
+  "method": "GET"
+}
+```
+
+[POST_message](http://localhost:3000/message/)
+
+```json
+// INPUT
+{
+	"user": "63a359aafab3506837f328cb",
+	"message":"Entidad relacionada"
+}
+
+//OUTPUT
+{
+	"error": false,
+	"mensaje": {
+		"user": "63a359aafab3506837f328cb",
+		"message": "Entidad relacionada",
+		"date": "2022-12-21T19:08:48.152Z"
+	},
+	"body": {
+		"user": "63a359aafab3506837f328cb",
+		"message": "Entidad relacionada"
+	},
+	"method": "POST"
+}
+```
