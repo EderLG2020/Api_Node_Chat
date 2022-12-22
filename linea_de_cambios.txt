@@ -1,0 +1,90 @@
+commit a2b8da5210bb9ca133d5596dc3d578452e80288e
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Thu Dec 22 14:15:14 2022 -0500
+
+    Componente chat - populado
+
+ componente/chat/controller.js | 25 +++++++++++++++++++++++++
+ componente/chat/model.js      |  9 +++++++++
+ componente/chat/network.js    | 29 +++++++++++++++++++++++++++++
+ componente/chat/store.js      | 29 +++++++++++++++++++++++++++++
+ componente/message/store.js   |  1 -
+ response/routes.js            |  3 ++-
+ 6 files changed, 94 insertions(+), 2 deletions(-)
+
+commit a31a405ac9e58b7c2bb80c6274071fd4d63cc15d
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Wed Dec 21 14:37:12 2022 -0500
+
+    Populado
+
+ README.md                   | 28 ++++++++++++++++++++++++++++
+ componente/message/store.js | 28 +++++++++++++++++++++++-----
+ 2 files changed, 51 insertions(+), 5 deletions(-)
+
+commit 3d03dbd596155d86b22209f90943f441f4da7ea6
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Wed Dec 21 14:16:23 2022 -0500
+
+    Referenciado de mensaje a user
+
+ README.md                   | 49 +++++++++++++++++++++++++++++++++++++++++++++
+ componente/message/model.js |  5 ++++-
+ 2 files changed, 53 insertions(+), 1 deletion(-)
+
+commit 80ee5fd9b8286b2601f586f85330c6d1c92f04dd
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Wed Dec 21 14:00:10 2022 -0500
+
+    crud componente User
+
+ componente/user/controller.js | 51 ++++++++++++++++++++++++++++++++++
+ componente/user/model.js      |  9 ++++++
+ componente/user/network.js    | 64 +++++++++++++++++++++++++++++++++++++++++++
+ componente/user/store.js      | 37 +++++++++++++++++++++++++
+ response/routes.js            |  3 ++
+ 5 files changed, 164 insertions(+)
+
+commit 5165bdc159caa0100361f08804fd5dc6195cb1d5
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Wed Dec 21 13:20:00 2022 -0500
+
+    Crud completo del componente  message
+
+ componente/message/controller.js | 16 ++++------------
+ componente/message/network.js    |  9 +++++----
+ componente/message/store.js      | 14 +++++++-------
+ db.js                            | 12 ++++++++----
+ 4 files changed, 24 insertions(+), 27 deletions(-)
+
+commit b975b9dfd346fae52d84c620b6f25aea2541cf02
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Wed Dec 21 12:49:13 2022 -0500
+
+    Message : post_get
+
+ .env                             |  6 ++++
+ README.md                        | 15 ++++++++++
+ componente/message/controller.js | 63 ++++++++++++++++++++++++++++++++++++++++
+ componente/message/model.js      | 14 +++++++++
+ componente/message/network.js    | 58 ++++++++++++++++++++++++++++++++++++
+ componente/message/store.js      | 46 +++++++++++++++++++++++++++++
+ db.js                            | 14 +++++++++
+ package.json                     | 11 ++++---
+ response/response.js             | 20 ++++++++-----
+ response/routes.js               |  8 +++++
+ server.js                        | 33 ++++++++-------------
+ 11 files changed, 255 insertions(+), 33 deletions(-)
+
+commit 53546695a7bd463e74152ea12e56fa939177273e
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Mon Dec 19 19:08:06 2022 -0500
+
+    Fase 1 - Response
+
+ .gitignore           |  2 ++
+ package.json         | 17 +++++++++++++++++
+ public/index.html    | 16 ++++++++++++++++
+ response/response.js | 16 ++++++++++++++++
+ server.js            | 30 ++++++++++++++++++++++++++++++
+ 5 files changed, 81 insertions(+)

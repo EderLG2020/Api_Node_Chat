@@ -9,7 +9,6 @@ function addChat(users) {
     users: users,
   };
   console.log("se envio", fullChat);
-  // return store.addS(fullChat);
   return Promise.resolve(store.addS(fullChat));
 }
 
