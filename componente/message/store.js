@@ -23,7 +23,6 @@ async function listS(filterUser) {
       //   }
       //   resolve(populated)
       // })
-
       .catch((e) => {
         reject(e);
       });
