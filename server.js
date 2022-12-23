@@ -5,12 +5,15 @@ const server = require("http").Server(app);
 
 const path = require("path");
 const connected = require("./db");
+const cors = require("cors");
 const socket = require("./socket");
 const router = require("./response/routes");
 
 const url = `mongodb+srv://${process.env.USER}:${process.env.PASS}@${process.env.HOST}/${process.env.DATABASE}?retryWrites=true&w=majority`;
 
 connected(url);
+
+app.use(cors());
 // body-parser no es necesario
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
