@@ -16,6 +16,10 @@ const mySchema = new Schema({
   },
   date: Date,
   file: String,
+  img: {
+    data: Buffer,
+    contentType: String,
+  },
 });
 
 const model = mongoose.model("Message", mySchema);

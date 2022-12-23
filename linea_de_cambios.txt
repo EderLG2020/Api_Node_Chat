@@ -1,3 +1,18 @@
+commit d89303fc00f1a9eccee0067e394ed7798b9e9d4f
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Thu Dec 22 15:16:52 2022 -0500
+
+    multer
+
+ componente/chat/controller.js    |   1 -
+ componente/message/controller.js |  10 ++++-
+ componente/message/model.js      |   5 +++
+ componente/message/network.js    |  22 ++++++++--
+ linea_de_cambios.txt             |  90 +++++++++++++++++++++++++++++++++++++++
+ public/files/ne.jpg              | Bin 0 -> 22763 bytes
+ public/files/xd_2.jpg            | Bin 0 -> 84779 bytes
+ 7 files changed, 123 insertions(+), 5 deletions(-)
+
 commit a2b8da5210bb9ca133d5596dc3d578452e80288e
 Author: EderLG2021 <edermaster12@hotmail.com>
 Date:   Thu Dec 22 14:15:14 2022 -0500

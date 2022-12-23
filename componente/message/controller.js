@@ -1,6 +1,6 @@
 const store = require("./store");
 
-function addMessage(chat, user, message, file) {
+function addMessage(chat, user, message, file, imagen) {
   return new Promise((resolve, reject) => {
     if (!user || !message) {
       console.error("[Error(message_controller)]");
@@ -18,6 +18,7 @@ function addMessage(chat, user, message, file) {
       message: message,
       date: new Date(),
       file: fileUrl,
+      img: imagen,
     };
     store.addS(fullMessage);
     console.log("se envio", fullMessage);

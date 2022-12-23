@@ -3,6 +3,7 @@ const multer = require("multer");
 const response = require("../../response/response");
 const controller = require("./controller");
 const path = require("path");
+const fs = require("fs");
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -11,6 +12,7 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
+    // cb(null, file.originalname + "-" + Date.now());
   },
 });
 
@@ -37,8 +39,18 @@ router.post("/", upload.single("file"), (req, res) => {
   // console.log(req.query); en url ?order=id&age=15
   // req.headers
   // res.header({})
+
+  var img = fs.readFileSync(req.file.path);
+  // var encode_img = img.toString("base64");
+  var final_img = {
+    image: img,
+    contentType: "image/png",
+    // image: new Buffer(encode_img, "base64"),
+  };
+
+  console.log(img);
   controller
-    .addC(req.body.chat, req.body.user, req.body.message, req.file)
+    .addC(req.body.chat, req.body.user, req.body.message, req.file, final_img)
     .then((data) => {
       response.success(req, res, data, 201);
     })
