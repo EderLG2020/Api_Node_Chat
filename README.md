@@ -128,3 +128,73 @@ Aplicacion inspirada en los cursos de `Platzi` se realizo una api para el envio 
 | Parámetro | Tipo    | Descripción                                                |
 | :-------- | :------ | :--------------------------------------------------------- |
 | ` - - -`  | `- - -` | Se elimina el mensaje, en la ur se envia el id del mensaje |
+
+## Screenshots
+
+**Plataforma de MongoDB**
+
+![Plataforma de MongoDB](https://i.ibb.co/6vwtGd3/mongo-DB-Eder.png)
+
+**Creando user**
+
+![Post_user](https://i.ibb.co/GkDxXC5/User-Post.png)
+
+**Listando todos los mensajes**
+
+![get_message](https://i.ibb.co/DYzW0Tq/Message-Get.png)
+
+**Creando un nuevo mensaje**
+
+![Post_message](https://i.ibb.co/1KXb6hZ/Message-Post.png)
+
+**Creando un nuevo chat**
+
+![Post_chat](https://i.ibb.co/K2yT4jP/Chat-Post.png)
+
+## Variables de entorno
+
+Para ejecutar este proyecto, deberá agregar las siguientes variables de entorno a su archivo .env
+
+`USER` = "Usuario que tiene acceso a la base de datos"
+
+`PASS` = "Contraseña del usuario"
+
+`HOST` = "Nombre del clouster de MongoDB"
+
+`DATABASE` = "Nombre de la base de datos"
+
+`PORT` = Puerto en que se ejecutara en el servidor
+
+## Run Locally
+
+Clonar el proyecto
+
+```bash
+  git clone https://github.com/EderLG2020/Api_Node_Chat
+```
+
+Ir al directorio del proyecto
+
+```bash
+  cd Api_Node_Chat
+```
+
+Instalar dependencias
+
+```bash
+  npm install
+```
+
+Inicie el servidor
+
+```bash
+  npm run dev
+```
+
+## Feedback
+
+Si tiene algún comentario, comuníquese conmigo ederlg2021@gmail.com
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

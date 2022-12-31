@@ -1,3 +1,55 @@
+commit f09a4c7b7955554f6ae53d08a3e56601a12f2651
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Fri Dec 30 20:18:42 2022 -0500
+
+    Readme
+
+ README.md                                          | 200 ++++++++++++---------
+ .../files/17afbdfd-8d91-4444-8378-272689e5e0f6.jpg | Bin 0 -> 81273 bytes
+ 2 files changed, 119 insertions(+), 81 deletions(-)
+
+commit 9dea361a6d21d977b735effa434d32dcce981550
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Fri Dec 23 15:36:54 2022 -0500
+
+    Habilitando los cors, por recomendacion se debe mantener habilitado
+
+ package.json | 1 +
+ server.js    | 3 +++
+ 2 files changed, 4 insertions(+)
+
+commit 10e73bbe5fcf65d3db8423540a443841d887fdf0
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Fri Dec 23 15:17:26 2022 -0500
+
+    implementacion de socket.io
+
+ componente/message/controller.js |   4 ++++
+ package.json                     |   3 ++-
+ public/files/sd.png              | Bin 0 -> 37716 bytes
+ public/index.html                |  28 ++++++++++++++++++++++++++++
+ server.js                        |  13 +++++++++----
+ socket.js                        |  11 +++++++++++
+ 6 files changed, 54 insertions(+), 5 deletions(-)
+
+commit 77bf6d19199482c2d6ca72f4e98ab769ef877703
+Author: EderLG2021 <edermaster12@hotmail.com>
+Date:   Fri Dec 23 14:45:51 2022 -0500
+
+    Subiendo imagen con multer
+
+ componente/message/controller.js |   3 ++-
+ componente/message/model.js      |   4 ++++
+ componente/message/network.js    |  14 +++++++++++++-
+ linea_de_cambios.txt             |  15 +++++++++++++++
+ package.json                     |   1 +
+ public/files/login.png           | Bin 0 -> 16148 bytes
+ public/files/ne.jpg              | Bin 22763 -> 0 bytes
+ public/files/xd_2.jpg            | Bin 84779 -> 0 bytes
+ public/index.html                |  16 ----------------
+ server.js                        |   2 ++
+ 10 files changed, 37 insertions(+), 18 deletions(-)
+
 commit d89303fc00f1a9eccee0067e394ed7798b9e9d4f
 Author: EderLG2021 <edermaster12@hotmail.com>
 Date:   Thu Dec 22 15:16:52 2022 -0500
