@@ -1,92 +1,130 @@
-# Cuenta de mongoDB:
+# Api de un chat en tiempo real
 
-**ederlg2021@gmail.com**
+Aplicacion inspirada en los cursos de `Platzi` se realizo una api para el envio de mensaje en tiempo real.
 
-[Video](https://www.youtube.com/watch?v=0PSIF5yQEL4&list=PLW2jH1vzz-mpYAA9tKVr9FrnYJxJyFgfA&index=19)
+## Tech Stack
 
-\***_Conexion a MongoDB con javascript _**
+**Server:** Node, Express
 
-```js
-const user = "PrimerUser";
-const pass = "W1zAlszE41O66gCN";
-const host = "cluster0.3jbmruv.mongodb.net";
-const database = "messege";
-const uri = `mongodb+srv://${user}:${pass}@${host}/${database}?retryWrites=true&w=majority`;
+**Database:** MongoDB
+
+## API Reference
+
+### **USER**
+
+#### Crear user
+
+```http
+  POST /user
 ```
 
-REFERENCIADO
+| Parámetro | Tipo     | Descripción                      |
+| :-------- | :------- | :------------------------------- |
+| `name`    | `String` | **Required**. Nombre del usuario |
 
-[GET_message](http://localhost:3000/message/)
+#### Listar user
 
-```json
-// INPUT: Sin parámetros
-
-// OUTPUT:
-{
-  "error": false,
-  "mensaje": [
-    {
-      "_id": "63a359c0fab3506837f328d4",
-      "user": "63a359aafab3506837f328cb",
-      "message": "Entidad relacionada",
-      "date": "2022-12-21T19:08:48.152Z",
-      "__v": 0
-    }
-  ],
-  "body": {},
-  "method": "GET"
-}
+```http
+  GET /user
 ```
 
-[POST_message](http://localhost:3000/message/)
+| Parámetro | Tipo   | Descripción              |
+| :-------- | :----- | :----------------------- |
+| `--- `    | ` ---` | Lista todos los usuarios |
 
-```json
-// INPUT
-{
-	"user": "63a359aafab3506837f328cb",
-	"message":"Entidad relacionada"
-}
+#### Eliminar user
 
-//OUTPUT
-{
-	"error": false,
-	"mensaje": {
-		"user": "63a359aafab3506837f328cb",
-		"message": "Entidad relacionada",
-		"date": "2022-12-21T19:08:48.152Z"
-	},
-	"body": {
-		"user": "63a359aafab3506837f328cb",
-		"message": "Entidad relacionada"
-	},
-	"method": "POST"
-}
+```http
+  DELETE /user/63a356cb684b69139e2281ea
 ```
 
-_POPULADO_
-Simplemente lo une con el campo
+| Parámetro | Tipo   | Descripción        |
+| :-------- | :----- | :----------------- |
+| `--- `    | ` ---` | Elimina el usuario |
 
-[POST_message](http://localhost:3000/message/)
+#### Editar user
 
-```json
-// INPUT
-{
-	"user": "63a359aafab3506837f328cb",
-	"message":"Entidad relacionada"
-}
-
-//OUTPUT
-{
-	"error": false,
-	"mensaje": {
-		"user": "63a359aafab3506837f328cb",
-		"message": "Entidad relacionada",
-		"date": "2022-12-21T19:08:48.152Z"
-	},
-	"body": {
-		"user": "63a359aafab3506837f328cb",
-		"message": "Entidad relacionada"
-	},
-	"method": "POST"
-}
+```http
+  PATCH /user/63a356cb684b69139e2281ea
 ```
+
+| Parámetro | Tipo      | Descripción                  |
+| :-------- | :-------- | :--------------------------- |
+| `name `   | ` String` | Cambia el nombre del usuario |
+
+### **CHAT**
+
+#### Crear Chat
+
+```http
+  POST /chat
+```
+
+| Parámetro | Tipo    | Descripción                                                                                                               |
+| :-------- | :------ | :------------------------------------------------------------------------------------------------------------------------ |
+| `users`   | `Array` | **Required** Se envia un array con el id de cada usuario como **63af7b945ab578615e9aacb3** y **63af7bcf5ab578615e9aacb5** |
+
+#### Listar Chat
+
+```http
+  GET /chat/63af7b945ab578615e9aacb3
+```
+
+| Parámetro | Tipo  | Descripción                                             |
+| :-------- | :---- | :------------------------------------------------------ |
+| `---`     | `---` | Lista los chat's en donde el id usuario este registrado |
+
+### **MESSAGE**
+
+#### Crear Message
+
+```http
+  POST /message
+```
+
+| Parámetro | Tipo       | Descripción                                                        |
+| :-------- | :--------- | :----------------------------------------------------------------- |
+| `chat  `  | `String`   | **Required** Se envia el **id** del chat en el que esta el usuario |
+| `user   ` | `ObjectId` | **Required** Se envia el **id** del usuario                        |
+| `message` | `String`   | **Required** Se envia el mensaje para el otro suaurio              |
+| `file `   | `String`   | **Required** Se carga una imagen                                   |
+
+#### Listar Message
+
+```http
+  GET /message/?user=63af7b945ab578615e9aacb3
+```
+
+| Parámetro | Tipo    | Descripción                               |
+| :-------- | :------ | :---------------------------------------- |
+| `- - -`   | `- - -` | Lista todos los mensajes solo del usuario |
+
+#### Listar todos los Message's
+
+```http
+  GET /message/
+```
+
+| Parámetro | Tipo    | Descripción                              |
+| :-------- | :------ | :--------------------------------------- |
+| `- - -`   | `- - -` | Lista todos los mensajes de los usuarios |
+
+#### Editar mensaje
+
+```http
+  PATCH /message/63a240996b1e9c3cf6310a78
+```
+
+| Parámetro | Tipo     | Descripción                                                                         |
+| :-------- | :------- | :---------------------------------------------------------------------------------- |
+| `text`    | `String` | Texto con el que se cambiara el mensaje anterior, en url se envia el id del mensaje |
+
+#### Eliminar mensaje
+
+```http
+  PATCH /message/63a2469959ad52b7120f896c
+```
+
+| Parámetro | Tipo    | Descripción                                                |
+| :-------- | :------ | :--------------------------------------------------------- |
+| ` - - -`  | `- - -` | Se elimina el mensaje, en la ur se envia el id del mensaje |
